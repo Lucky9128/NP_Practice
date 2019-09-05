@@ -35,7 +35,7 @@ static void	sig_quit(int);
 
 int main(void)
 {
-	sigset_t	newmask, oldmask, pendmask;
+	sigset_t newmask, oldmask, pendmask;
 
 	if (signal(SIGQUIT, sig_quit) == SIG_ERR)
 		err_sys("can't catch SIGQUIT");
