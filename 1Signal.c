@@ -4,7 +4,8 @@
 
 void main()
 {
-    printf("%d\n",NSIG);
-    for(int i= 0;i<=65;i++)
+    printf("%d\n",SIGRTMAX);
+    printf("%d\n",SIGRTMIN);
+    for(int i=0;i<=SIGRTMAX;i++)
         printf("%s\n",strsignal(i));
 }
