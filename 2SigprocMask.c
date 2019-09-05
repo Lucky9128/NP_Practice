@@ -1,3 +1,26 @@
+/*
+sigprocmask()  is  used to fetch and/or change the signal mask of the calling thread.  The signal mask is the set of signals whose delivery
+       is currently blocked for the caller (see also signal(7) for more details).
+
+       The behavior of the call is dependent on the value of how, as follows.
+
+       SIG_BLOCK
+              The set of blocked signals is the union of the current set and the set argument.
+
+       SIG_UNBLOCK
+              The signals in set are removed from the current set of blocked signals.  It is permissible to attempt to unblock a signal  which  is
+              not blocked.
+
+       SIG_SETMASK
+              The set of blocked signals is set to the argument set.
+
+       If oldset is non-NULL, the previous value of the signal mask is stored in oldset.
+
+       If set is NULL, then the signal mask is unchanged (i.e., how is ignored), but the current value of the signal mask is nevertheless returned
+       in oldset (if it is not NULL).
+
+
+*/
 #include	<signal.h>
 #include	<stdlib.h>
 #include	<stdio.h>
